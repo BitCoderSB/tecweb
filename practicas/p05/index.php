@@ -104,5 +104,22 @@ header('Content-Type: text/html; charset=UTF-8');
     <?php unset($a,$b,$c,$d,$e,$f); ?>
   </section>
   <hr/>
+
+  <section id="e7">
+    <h2>Ejercicio 7</h2>
+    <pre><?php
+      $apache = $_SERVER['SERVER_SOFTWARE'] ?? 'No disponible';
+      $php = PHP_VERSION;
+      $so = PHP_OS_FAMILY . ' (' . php_uname('s') . ')';
+      $lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'No especificado';
+      echo "Apache/SAPI => $apache\n";
+      echo "PHP         => $php\n";
+      echo "SO Servidor => $so\n";
+      echo "Idioma (Accept-Language) Cliente => $lang\n";
+    ?></pre>
+  </section>
+
+  <hr/>
+  <p><small>Fin de práctica.</small></p>
 </body>
 </html>
