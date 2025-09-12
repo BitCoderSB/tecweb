@@ -34,5 +34,20 @@ header('Content-Type: text/html; charset=UTF-8');
     </ul>
   </section>
   <hr/>
+
+  <section id="e2">
+    <h2>Ejercicio 2</h2>
+    <pre><?php
+      $a = "ManejadorSQL";
+      $b = 'MySQL';
+      $c = &$a;
+      var_dump($a, $b, $c);
+      $a = "PHP server";
+      $b = &$a;
+      var_dump($a, $b, $c);
+    ?></pre>
+    <?php unset($a,$b,$c); ?>
+  </section>
+  <hr/>
 </body>
 </html>
