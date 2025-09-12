@@ -49,5 +49,20 @@ header('Content-Type: text/html; charset=UTF-8');
     <?php unset($a,$b,$c); ?>
   </section>
   <hr/>
+
+  <section id="e3">
+    <h2>Ejercicio 3</h2>
+    <pre><?php
+      $a = "PHP5"; echo '$a = "PHP5" => '; var_dump($a);
+      $z = []; $z[] = &$a; echo '$z[] = &$a => '; print_r($z);
+      $b = "5a version de PHP"; echo '$b = "5a version de PHP" => '; var_dump($b);
+      $c = $b * 10; echo '$c = $b * 10 => '; var_dump($c);
+      $a .= $b; echo '$a .= $b => '; var_dump($a);
+      $b *= $c; echo '$b *= $c => '; var_dump($b);
+      $z[0] = "MySQL"; echo '$z[0] = "MySQL" => '; print_r($z);
+    ?></pre>
+    <?php unset($a,$b,$c,$z); ?>
+  </section>
+  <hr/>
 </body>
 </html>
