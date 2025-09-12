@@ -89,5 +89,20 @@ header('Content-Type: text/html; charset=UTF-8');
     <?php unset($a,$b,$c); ?>
   </section>
   <hr/>
+
+  <section id="e6">
+    <h2>Ejercicio 6</h2>
+    <pre><?php
+      $a = "0"; $b = "TRUE"; $c = FALSE;
+      $d = ($a OR $b);
+      $e = ($a AND $c);
+      $f = ($a XOR $b);
+      var_dump($a,$b,$c,$d,$e,$f);
+      echo 'c => ' . var_export($c, true) . "\n";
+      echo 'e => ' . var_export($e, true) . "\n";
+    ?></pre>
+    <?php unset($a,$b,$c,$d,$e,$f); ?>
+  </section>
+  <hr/>
 </body>
 </html>
