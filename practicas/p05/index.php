@@ -64,5 +64,17 @@ header('Content-Type: text/html; charset=UTF-8');
     <?php unset($a,$b,$c,$z); ?>
   </section>
   <hr/>
+
+  <section id="e4">
+    <h2>Ejercicio 4</h2>
+    <pre><?php
+      $a = "PHP5"; $z=[]; $z[]=&$a; $b="5a version de PHP"; $c = $b*10; $a.=$b; $b*=$c; $z[0]="MySQL";
+      print_r($GLOBALS['a']); print_r($GLOBALS['b']); print_r($GLOBALS['c']); print_r($GLOBALS['z']);
+      function leerGlobales(){ global $a,$b,$c,$z; var_dump($a,$b,$c); print_r($z); }
+      leerGlobales();
+    ?></pre>
+    <?php unset($a,$b,$c,$z); ?>
+  </section>
+  <hr/>
 </body>
 </html>
