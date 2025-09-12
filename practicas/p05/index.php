@@ -76,5 +76,18 @@ header('Content-Type: text/html; charset=UTF-8');
     <?php unset($a,$b,$c,$z); ?>
   </section>
   <hr/>
+
+  <section id="e5">
+    <h2>Ejercicio 5</h2>
+    <pre><?php
+      $a = "7 personas";
+      $b = (integer)$a;
+      $a = "9E3";
+      $c = (double)$a;
+      var_dump($a, $b, $c);
+    ?></pre>
+    <?php unset($a,$b,$c); ?>
+  </section>
+  <hr/>
 </body>
 </html>
