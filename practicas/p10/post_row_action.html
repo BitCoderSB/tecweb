@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <title>post_row_action.html</title>
+    <script>
+        function show(ev) {
+            const tr = ev.target.closest('tr');
+            const id = tr.id;
+            const data = tr.querySelectorAll('.row-data');
+            const name = data[0].textContent.trim();
+            const age = data[1].textContent.trim();
+
+            alert("Name: " + name + "\nAge: " + age);
+            send2form(id, name, age);
+        }
+
+        function addField(form, name, value) {
+            const i = document.createElement('input');
+            i.type = 'hidden';
+            i.name = name;
+            i.value = value;
+            form.appendChild(i);
+        }
+
+        function send2form(id, name, age) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'http://localhost/p10/formulario_productos_v2.php';
+
+            addField(form, 'id', id);
+            addField(form, 'nombre', name);
+            addField(form, 'marca', 'Apple');
+            addField(form, 'modelo', 'S9');
+            addField(form, 'precio', '120.00');
+            addField(form, 'unidades', '2');
+            addField(form, 'imagen', '');
+            addField(form, 'detalles', 'Edad: ' + age);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</head>
+<body class="p-3">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Submit</th>
+            </tr>
+            <tr id="1">
+                <th scope="row">1</th>
+                <td class="row-data">Sara</td>
+                <td class="row-data">23</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" onclick="show(event)">submit</button>
+                </td>
+            </tr>
+            <tr id="2">
+                <th scope="row">2</th>
+                <td class="row-data">John</td>
+                <td class="row-data">30</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" onclick="show(event)">submit</button>
+                </td>
+            </tr>
+            <tr id="3">
+                <th scope="row">3</th>
+                <td class="row-data">Naman</td>
+                <td class="row-data">20</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" onclick="show(event)">submit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
