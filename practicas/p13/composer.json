@@ -1,0 +1,10 @@
+{
+    "name": "student/p13-product-app",
+    "description": "Practica 13 - Product app with PSR-4 autoload",
+    "autoload": {
+        "psr-4": {
+            "P13\\ProductApp\\": "src/"
+        }
+    },
+    "require": {}
+}
