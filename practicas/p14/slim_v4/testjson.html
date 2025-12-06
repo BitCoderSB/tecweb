@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba JSON</title>
+</head>
+<body>
+    <h1>Formulario - /testjson</h1>
+
+    <form id="fjson">
+        <label>Usuario: <input type="text" id="usuario"></label><br><br>
+        <label>Rol: <input type="text" id="rol"></label><br><br>
+        <button type="submit">Enviar JSON</button>
+    </form>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        document.getElementById("fjson").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let data = {
+                usuario: document.getElementById("usuario").value,
+                rol: document.getElementById("rol").value
+            };
+
+            fetch("http://localhost/p14/slim_v4/testjson", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(r => r.text())
+            .then(t => document.getElementById("resultado").textContent = t);
+        });
+    </script>
+</body>
+</html>
